@@ -58,10 +58,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <span class="menu"></span>
                 <ul>
-                    <li class="active"><a href="index.html">HOME</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                    <div class="clearfix"></div>
+                    <li class="active"><a href="index.html">Ana Səhifə</a></li>
+                    <li><a href="about.html">Haqqında</a></li>
+                    <li><a href="contact.html">Əlaqə</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -83,6 +82,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!---->
     <div class="footer">
         <div class="container">
-            <p>Copyrights © 2015 Blog All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+            <p>Copyrights © 2021  | Müəllif Hüquqları Qorunur.</p>
         </div>
     </div>
+</body>
+</html>

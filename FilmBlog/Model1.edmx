@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SerialFilm_CommentASPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBL_BLOG">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlogBasliq" Type="nvarchar" MaxLength="100" />
+          <Property Name="BlogMezmun" Type="nvarchar" MaxLength="4000" />
+          <Property Name="BlogTarix" Type="smalldatetime" />
+          <Property Name="BlogSekil" Type="nvarchar" MaxLength="100" />
+          <Property Name="BlogNov" Type="tinyint" />
+          <Property Name="BlogKateqoriya" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="TBLELAQE">
+          <Key>
+            <PropertyRef Name="MesajId" />
+          </Key>
+          <Property Name="MesajId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="Basliq" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mesaj" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TBLHAQQIMIZDA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Aciqlama" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="TBLKATEQORIYA">
+          <Key>
+            <PropertyRef Name="KateqoriyaId" />
+          </Key>
+          <Property Name="KateqoriyaId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KateqoriyaAd" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TBLNOV">
+          <Key>
+            <PropertyRef Name="NovId" />
+          </Key>
+          <Property Name="NovId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NovAd" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TBLSERH">
+          <Key>
+            <PropertyRef Name="SerhId" />
+          </Key>
+          <Property Name="SerhId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IstifadeciAd" Type="nvarchar" MaxLength="40" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerhMezmun" Type="nvarchar" MaxLength="500" />
+          <Property Name="SerhBlog" Type="int" />
+        </EntityType>
+        <Association Name="FK_TBL_BLOG_TBLKATEQORIYA">
+          <End Role="TBLKATEQORIYA" Type="Self.TBLKATEQORIYA" Multiplicity="0..1" />
+          <End Role="TBL_BLOG" Type="Self.TBL_BLOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLKATEQORIYA">
+              <PropertyRef Name="KateqoriyaId" />
+            </Principal>
+            <Dependent Role="TBL_BLOG">
+              <PropertyRef Name="BlogKateqoriya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_BLOG_TBLNOV">
+          <End Role="TBLNOV" Type="Self.TBLNOV" Multiplicity="0..1" />
+          <End Role="TBL_BLOG" Type="Self.TBL_BLOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLNOV">
+              <PropertyRef Name="NovId" />
+            </Principal>
+            <Dependent Role="TBL_BLOG">
+              <PropertyRef Name="BlogNov" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLSERH_TBL_BLOG">
+          <End Role="TBL_BLOG" Type="Self.TBL_BLOG" Multiplicity="0..1" />
+          <End Role="TBLSERH" Type="Self.TBLSERH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_BLOG">
+              <PropertyRef Name="BlogId" />
+            </Principal>
+            <Dependent Role="TBLSERH">
+              <PropertyRef Name="SerhBlog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SerialFilm_CommentASPModelStoreContainer">
+          <EntitySet Name="TBL_BLOG" EntityType="Self.TBL_BLOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLELAQE" EntityType="Self.TBLELAQE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLHAQQIMIZDA" EntityType="Self.TBLHAQQIMIZDA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLKATEQORIYA" EntityType="Self.TBLKATEQORIYA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLNOV" EntityType="Self.TBLNOV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLSERH" EntityType="Self.TBLSERH" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TBL_BLOG_TBLKATEQORIYA" Association="Self.FK_TBL_BLOG_TBLKATEQORIYA">
+            <End Role="TBLKATEQORIYA" EntitySet="TBLKATEQORIYA" />
+            <End Role="TBL_BLOG" EntitySet="TBL_BLOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_BLOG_TBLNOV" Association="Self.FK_TBL_BLOG_TBLNOV">
+            <End Role="TBLNOV" EntitySet="TBLNOV" />
+            <End Role="TBL_BLOG" EntitySet="TBL_BLOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLSERH_TBL_BLOG" Association="Self.FK_TBLSERH_TBL_BLOG">
+            <End Role="TBL_BLOG" EntitySet="TBL_BLOG" />
+            <End Role="TBLSERH" EntitySet="TBLSERH" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SerialFilm_CommentASPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_BLOG">
+          <Key>
+            <PropertyRef Name="BlogId" />
+          </Key>
+          <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BlogBasliq" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BlogMezmun" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="BlogTarix" Type="DateTime" Precision="0" />
+          <Property Name="BlogSekil" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BlogNov" Type="Byte" />
+          <Property Name="BlogKateqoriya" Type="Byte" />
+          <NavigationProperty Name="TBLKATEQORIYA" Relationship="Self.FK_TBL_BLOG_TBLKATEQORIYA" FromRole="TBL_BLOG" ToRole="TBLKATEQORIYA" />
+          <NavigationProperty Name="TBLNOV" Relationship="Self.FK_TBL_BLOG_TBLNOV" FromRole="TBL_BLOG" ToRole="TBLNOV" />
+          <NavigationProperty Name="TBLSERHs" Relationship="Self.FK_TBLSERH_TBL_BLOG" FromRole="TBL_BLOG" ToRole="TBLSERH" />
+        </EntityType>
+        <EntityType Name="TBLELAQE">
+          <Key>
+            <PropertyRef Name="MesajId" />
+          </Key>
+          <Property Name="MesajId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Basliq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mesaj" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLHAQQIMIZDA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Aciqlama" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBLKATEQORIYA">
+          <Key>
+            <PropertyRef Name="KateqoriyaId" />
+          </Key>
+          <Property Name="KateqoriyaId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KateqoriyaAd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_BLOG" Relationship="Self.FK_TBL_BLOG_TBLKATEQORIYA" FromRole="TBLKATEQORIYA" ToRole="TBL_BLOG" />
+        </EntityType>
+        <EntityType Name="TBLNOV">
+          <Key>
+            <PropertyRef Name="NovId" />
+          </Key>
+          <Property Name="NovId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NovAd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBL_BLOG" Relationship="Self.FK_TBL_BLOG_TBLNOV" FromRole="TBLNOV" ToRole="TBL_BLOG" />
+        </EntityType>
+        <EntityType Name="TBLSERH">
+          <Key>
+            <PropertyRef Name="SerhId" />
+          </Key>
+          <Property Name="SerhId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IstifadeciAd" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SerhMezmun" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SerhBlog" Type="Int32" />
+          <NavigationProperty Name="TBL_BLOG" Relationship="Self.FK_TBLSERH_TBL_BLOG" FromRole="TBLSERH" ToRole="TBL_BLOG" />
+        </EntityType>
+        <Association Name="FK_TBL_BLOG_TBLKATEQORIYA">
+          <End Role="TBLKATEQORIYA" Type="Self.TBLKATEQORIYA" Multiplicity="0..1" />
+          <End Role="TBL_BLOG" Type="Self.TBL_BLOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLKATEQORIYA">
+              <PropertyRef Name="KateqoriyaId" />
+            </Principal>
+            <Dependent Role="TBL_BLOG">
+              <PropertyRef Name="BlogKateqoriya" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_BLOG_TBLNOV">
+          <End Role="TBLNOV" Type="Self.TBLNOV" Multiplicity="0..1" />
+          <End Role="TBL_BLOG" Type="Self.TBL_BLOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLNOV">
+              <PropertyRef Name="NovId" />
+            </Principal>
+            <Dependent Role="TBL_BLOG">
+              <PropertyRef Name="BlogNov" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLSERH_TBL_BLOG">
+          <End Role="TBL_BLOG" Type="Self.TBL_BLOG" Multiplicity="0..1" />
+          <End Role="TBLSERH" Type="Self.TBLSERH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBL_BLOG">
+              <PropertyRef Name="BlogId" />
+            </Principal>
+            <Dependent Role="TBLSERH">
+              <PropertyRef Name="SerhBlog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SerialFilm_CommentASPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_BLOG" EntityType="Self.TBL_BLOG" />
+          <EntitySet Name="TBLELAQEs" EntityType="Self.TBLELAQE" />
+          <EntitySet Name="TBLHAQQIMIZDAs" EntityType="Self.TBLHAQQIMIZDA" />
+          <EntitySet Name="TBLKATEQORIYAs" EntityType="Self.TBLKATEQORIYA" />
+          <EntitySet Name="TBLNOVs" EntityType="Self.TBLNOV" />
+          <EntitySet Name="TBLSERHs" EntityType="Self.TBLSERH" />
+          <AssociationSet Name="FK_TBL_BLOG_TBLKATEQORIYA" Association="Self.FK_TBL_BLOG_TBLKATEQORIYA">
+            <End Role="TBLKATEQORIYA" EntitySet="TBLKATEQORIYAs" />
+            <End Role="TBL_BLOG" EntitySet="TBL_BLOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_BLOG_TBLNOV" Association="Self.FK_TBL_BLOG_TBLNOV">
+            <End Role="TBLNOV" EntitySet="TBLNOVs" />
+            <End Role="TBL_BLOG" EntitySet="TBL_BLOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLSERH_TBL_BLOG" Association="Self.FK_TBLSERH_TBL_BLOG">
+            <End Role="TBL_BLOG" EntitySet="TBL_BLOG" />
+            <End Role="TBLSERH" EntitySet="TBLSERHs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SerialFilm_CommentASPModelStoreContainer" CdmEntityContainer="SerialFilm_CommentASPEntities">
+          <EntitySetMapping Name="TBL_BLOG">
+            <EntityTypeMapping TypeName="SerialFilm_CommentASPModel.TBL_BLOG">
+              <MappingFragment StoreEntitySet="TBL_BLOG">
+                <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+                <ScalarProperty Name="BlogBasliq" ColumnName="BlogBasliq" />
+                <ScalarProperty Name="BlogMezmun" ColumnName="BlogMezmun" />
+                <ScalarProperty Name="BlogTarix" ColumnName="BlogTarix" />
+                <ScalarProperty Name="BlogSekil" ColumnName="BlogSekil" />
+                <ScalarProperty Name="BlogNov" ColumnName="BlogNov" />
+                <ScalarProperty Name="BlogKateqoriya" ColumnName="BlogKateqoriya" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLELAQEs">
+            <EntityTypeMapping TypeName="SerialFilm_CommentASPModel.TBLELAQE">
+              <MappingFragment StoreEntitySet="TBLELAQE">
+                <ScalarProperty Name="MesajId" ColumnName="MesajId" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Basliq" ColumnName="Basliq" />
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLHAQQIMIZDAs">
+            <EntityTypeMapping TypeName="SerialFilm_CommentASPModel.TBLHAQQIMIZDA">
+              <MappingFragment StoreEntitySet="TBLHAQQIMIZDA">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Aciqlama" ColumnName="Aciqlama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLKATEQORIYAs">
+            <EntityTypeMapping TypeName="SerialFilm_CommentASPModel.TBLKATEQORIYA">
+              <MappingFragment StoreEntitySet="TBLKATEQORIYA">
+                <ScalarProperty Name="KateqoriyaId" ColumnName="KateqoriyaId" />
+                <ScalarProperty Name="KateqoriyaAd" ColumnName="KateqoriyaAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLNOVs">
+            <EntityTypeMapping TypeName="SerialFilm_CommentASPModel.TBLNOV">
+              <MappingFragment StoreEntitySet="TBLNOV">
+                <ScalarProperty Name="NovId" ColumnName="NovId" />
+                <ScalarProperty Name="NovAd" ColumnName="NovAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLSERHs">
+            <EntityTypeMapping TypeName="SerialFilm_CommentASPModel.TBLSERH">
+              <MappingFragment StoreEntitySet="TBLSERH">
+                <ScalarProperty Name="SerhId" ColumnName="SerhId" />
+                <ScalarProperty Name="IstifadeciAd" ColumnName="IstifadeciAd" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="SerhMezmun" ColumnName="SerhMezmun" />
+                <ScalarProperty Name="SerhBlog" ColumnName="SerhBlog" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
