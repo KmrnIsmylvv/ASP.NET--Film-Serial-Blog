@@ -5,16 +5,21 @@
     <div class="container">
         <div class="content-grids">
             <div class="col-md-8 content-main">
-                <div class="content-grid">
-                    <div class="content-grid-info">
-                        <img src="/web/images/post1.jpg" alt="" />
-                        <div class="post-info">
-                            <h4><a href="single.html">Lorem ipsum dolor sit amet</a>  July 30, 2014 / 27 Comments</h4>
-                            <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
-                            <a href="single.html"><span></span>Davamını Oxu</a>
+                <asp:Repeater ID="Repeater1" runat="server">
+                    <ItemTemplate>
+                        <div class="content-grid">
+                            <div class="content-grid-info">
+                                <img src="<%# Eval("BlogSekil") %>" alt="" />
+                                <div class="post-info">
+                                    <h4><a href="single.html"><%# Eval("BlogBasliq") %></a>  July 30, 2014 / 27 Comments</h4>
+                                    <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
+                                    <a href="single.html"><span></span>Davamını Oxu</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+
             </div>
             <div class="col-md-4 content-right">
                 <div class="recent">
