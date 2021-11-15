@@ -15,6 +15,14 @@ namespace FilmBlog
             var bloglar = db.TBL_BLOG.ToList();
             Repeater1.DataSource = bloglar;
             Repeater1.DataBind();
+
+            var bloglar2 = db.TBLKATEQORIYAs.ToList();
+            Repeater2.DataSource = bloglar2;
+            Repeater2.DataBind();
+
+            var bloglar3 = db.TBL_BLOG.ToList();
+            Repeater3.DataSource = bloglar3;
+            Repeater3.DataBind();
         }
     }
 }

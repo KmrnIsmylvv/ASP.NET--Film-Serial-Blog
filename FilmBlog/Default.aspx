@@ -25,10 +25,11 @@
                 <div class="recent">
                     <h3>Ən Son Bloglar</h3>
                     <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
+                        <asp:Repeater ID="Repeater3" runat="server">
+                            <ItemTemplate>
+                                <li><a href="#"><%# Eval("BlogBasliq") %></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </ul>
                 </div>
                 <div class="comments">
@@ -52,10 +53,11 @@
                 <div class="categories">
                     <h3>Kateqoriyalar</h3>
                     <ul>
-                        <li><a href="#">Vivamus vestibulum nulla</a></li>
-                        <li><a href="#">Integer vitae libero ac risus e</a></li>
-                        <li><a href="#">Vestibulum commo</a></li>
-                        <li><a href="#">Cras iaculis ultricies</a></li>
+                        <asp:Repeater ID="Repeater2" runat="server">
+                            <ItemTemplate>
+                                <li><a href="#"><%# Eval("KateqoriyaAd") %></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
