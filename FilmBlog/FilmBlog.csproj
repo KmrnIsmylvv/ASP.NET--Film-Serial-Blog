@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BlogDetal.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -113,6 +114,13 @@
     <Content Include="web\Yeni Metin Belgesi.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlogDetal.aspx.cs">
+      <DependentUpon>BlogDetal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BlogDetal.aspx.designer.cs">
+      <DependentUpon>BlogDetal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
