@@ -9,7 +9,7 @@
                     <ItemTemplate>
                         <div class="content-grid">
                             <div class="content-grid-info">
-                                <img src="<%# Eval("BlogSekil") %>" alt="" />
+                                <img src="<%# Eval("BlogSekil") %>" alt="" style="height: 300px; width: 600px" />
                                 <div class="post-info">
                                     <h4><a href="BlogDetal.aspx?BlogId=<%# Eval("BlogId") %>"><%# Eval("BlogBasliq") %></a>  July 30, 2014 / 27 Comments</h4>
                                     <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
