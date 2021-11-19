@@ -16,6 +16,10 @@ namespace FilmBlog
             var blog = db.TBL_BLOG.Where(x => x.BlogId == id).ToList();
             Repeater1.DataSource = blog;
             Repeater1.DataBind();
+
+            var serhler = db.TBLSERHs.Where(x => x.SerhBlog == id).ToList();
+            Repeater2.DataSource = serhler;
+            Repeater2.DataBind();
         }
     }
 }
