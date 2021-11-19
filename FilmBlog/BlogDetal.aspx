@@ -64,7 +64,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li>
                                     <img src="web/images/avatar.png" class="img-responsive" alt="">
                                     <div class="desc">
-                                        <p> <strong> <%# Eval("IstifadeciAd") %></strong> : <%# Eval("SerhMezmun") %></p>
+                                        <p><strong><%# Eval("IstifadeciAd") %></strong> : <%# Eval("SerhMezmun") %></p>
 
                                     </div>
                                     <div class="clearfix"></div>
@@ -74,14 +74,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </asp:Repeater>
 
                     <div class="content-form">
-                        <h3>Leave a comment</h3>
-                        <form>
-                            <input type="text" placeholder="Name" required />
-                            <input type="text" placeholder="Email" required />
-                            <input type="text" placeholder="Phone" required />
-                            <textarea placeholder="Message"></textarea>
-                            <input type="submit" value="SEND" />
-                        </form>
+                        <h3>Şərh Yazın</h3>
+                        <form runat="server">
+                            <asp:TextBox ID="TextBox1" runat="server" placeholder="İstifadəçi Adınız" ></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" runat="server" placeholder="Poçt Ünvanınız" ></asp:TextBox>
+                            <asp:TextBox ID="TextBox3" runat="server" placeholder="Şərhiniz" TextMode="MultiLine" Height="100"></asp:TextBox>
+                            <asp:Button ID="Button1" runat="server" Text="Göndər" />
+                            </form>
                     </div>
                 </div>
             </div>
