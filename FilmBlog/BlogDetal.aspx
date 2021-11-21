@@ -79,7 +79,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <asp:TextBox ID="TextBox1" runat="server" placeholder="İstifadəçi Adınız" ></asp:TextBox>
                             <asp:TextBox ID="TextBox2" runat="server" placeholder="Poçt Ünvanınız" ></asp:TextBox>
                             <asp:TextBox ID="TextBox3" runat="server" placeholder="Şərhiniz" TextMode="MultiLine" Height="100"></asp:TextBox>
-                            <asp:Button ID="Button1" runat="server" Text="Göndər" />
+                            <asp:Button ID="Button1" runat="server" Text="Göndər" OnClick="Button1_Click" />
                             </form>
                     </div>
                 </div>

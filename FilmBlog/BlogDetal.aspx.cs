@@ -21,5 +21,19 @@ namespace FilmBlog
             Repeater2.DataSource = serhler;
             Repeater2.DataBind();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(Request.QueryString["BlogId"]);
+            TBLSERH t = new TBLSERH();
+            t.IstifadeciAd = TextBox1.Text;
+            t.Mail = TextBox2.Text;
+            t.SerhMezmun = TextBox3.Text;
+            t.SerhBlog = id;
+            db.TBLSERHs.Add(t);
+            db.SaveChanges();
+            Response.Redirect("BlogDetal.aspx?BlogId=" + id);
+
+        }
     }
 }
