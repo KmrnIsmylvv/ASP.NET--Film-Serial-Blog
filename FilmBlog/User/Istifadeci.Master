@@ -58,9 +58,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <span class="menu"></span>
                 <ul>
-                    <li class="active"><a href="index.html">Ana Səhifə</a></li>
-                    <li><a href="about.html">Haqqında</a></li>
-                    <li><a href="contact.html">Əlaqə</a></li>
+                    <li class="active"><a href="Default.aspx">Ana Səhifə</a></li>
+                    <li><a href="Haqqimda.aspx">Haqqında</a></li>
+                    <li><a href="Elaqe.aspx">Əlaqə</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

@@ -77,6 +77,7 @@
   <ItemGroup>
     <Content Include="BlogDetal.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Haqqimda.aspx" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Haqqimda.aspx.cs">
+      <DependentUpon>Haqqimda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Haqqimda.aspx.designer.cs">
+      <DependentUpon>Haqqimda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
