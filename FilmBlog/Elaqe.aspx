@@ -23,18 +23,9 @@
             <div class="contact-details">
                 <div class="col-md-6 contact-map">
                     <h4>MƏKAN</h4>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d803187.8113675824!2d-120.11910914056458!3d38.15292455846902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C+USA!5e0!3m2!1sen!2sin!4v1423829283333" frameborder="0" style="border: 0"></iframe>
-                </div>
-                <div class="col-md-6 company_address">
-                    <h4>GET IN TOUCH</h4>
-                    <p>500 Lorem Ipsum Dolor Sit,</p>
-                    <p>22-56-2-9 Sit Amet, Lorem,</p>
-                    <p>USA</p>
-                    <p>Phone:(00) 222 666 444</p>
-                    <p>Fax: (000) 123 456 78 0</p>
-                    <p>Email: <a href="mailto:info@example.com">info@mycompany.com</a></p>
-                    <p>Follow on: <a href="#">Facebook</a>, <a href="#">Twitter</a></p>
-                </div>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Baku&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google maps html widget</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+                   </div>
+               
                 <div class="clearfix"></div>
             </div>
         </div>
