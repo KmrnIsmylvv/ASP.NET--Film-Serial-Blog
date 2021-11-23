@@ -17,7 +17,7 @@
                     <asp:TextBox ID="TextBox4" runat="server"  placeholder="Başlıq" required=""></asp:TextBox>
                     <asp:TextBox ID="TextBox5" runat="server"  placeholder="Mesaj" required="" Height="100" TextMode="MultiLine"></asp:TextBox>
 
-                    <asp:Button ID="Button1" runat="server" Text="Göndər" />
+                    <asp:Button ID="Button1" runat="server" Text="Göndər" OnClick="Button1_Click" />
                 </form>
             </div> 
             <div class="contact-details">
